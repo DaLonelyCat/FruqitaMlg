@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-shopee: #EE4D2D;
+  --color-shopee-hover: #d73217;
+}
+
+@layer base {
+  html, body {
+    background-color: #f4f4f5;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .hero-bg {
+    background-color: #e4e4e7;
+  }
+  
+  .shopee-color {
+    color: var(--color-shopee);
+  }
+
+  .shopee-bg {
+    background-color: var(--color-shopee);
+  }
+
+  .shopee-hover:hover {
+    background-color: var(--color-shopee-hover);
+  }
+
+  /* Hardware acceleration hints for smooth rendering */
+  .smooth-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  @keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .animate-float {
+    animation: subtleFloat 4.5s ease-in-out infinite;
+    will-change: transform;
+  }
+}
